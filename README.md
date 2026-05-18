@@ -8,7 +8,7 @@ Criei as classes Animal com as subclasses Ave e Mamifero com as respetivas subcl
 
 ### Queries
 
-
+Criei as queries para a ontologia
 
 
 ## Exercicio 2
@@ -23,3 +23,4 @@ Depois de ter a ontologia base criada, com base nos ficheiros json fornecidos, p
 
 ### Sparql
 
+Criei queries simples para a ontologia povoada, de seguida criei queries de cálculo de distribuições e depois de inferência de novo conhecimento

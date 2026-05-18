@@ -1,11 +1,10 @@
 ###############################################################
-# RPCW 2026 - Exercicio 2 - Queries simples (sparql.txt)
-# Repositorio GraphDB: "boardgames"  (importar boardgames_ind.ttl)
+# RPCW 2026 - Exercicio 2 - Queries simples
 ###############################################################
 
 
 # --------------------------------------------------------------
-# a) Quais sao os jogos criados por um determinado autor?
+# 12 Quais sao os jogos criados por um determinado autor?
 #    (arbitrado: "Klaus Teuber")
 # --------------------------------------------------------------
 PREFIX : <http://www.di.uminho.pt/rpcw2026/pg60273#>
@@ -18,7 +17,7 @@ SELECT ?jogo WHERE {
 
 
 # --------------------------------------------------------------
-# b) Quais os premios ganhos por um determinado jogo?
+# 13 Quais os premios ganhos por um determinado jogo?
 #    (arbitrado: "Catan")
 # --------------------------------------------------------------
 PREFIX : <http://www.di.uminho.pt/rpcw2026/pg60273#>
@@ -32,7 +31,7 @@ SELECT ?premio WHERE {
 
 
 # --------------------------------------------------------------
-# c) Que jogos pertencem a categoria Family?
+# 14 Que jogos pertencem a categoria Family?
 # --------------------------------------------------------------
 PREFIX : <http://www.di.uminho.pt/rpcw2026/pg60273#>
 
@@ -44,7 +43,7 @@ ORDER BY ?jogo
 
 
 # --------------------------------------------------------------
-# d) Que jogos demoram mais de 60 minutos a jogar?
+# 15 Que jogos demoram mais de 60 minutos a jogar?
 # --------------------------------------------------------------
 PREFIX : <http://www.di.uminho.pt/rpcw2026/pg60273#>
 
@@ -57,7 +56,7 @@ ORDER BY DESC(?tempo)
 
 
 # --------------------------------------------------------------
-# e) Em que jogos entra a mecanica Dice Rolling?
+# 16 Em que jogos entra a mecanica Dice Rolling?
 # --------------------------------------------------------------
 PREFIX : <http://www.di.uminho.pt/rpcw2026/pg60273#>
 
@@ -70,12 +69,12 @@ ORDER BY ?jogo
 
 
 ###############################################################
-# Calculo de distribuicoes (4 val.)
+# Calculo de distribuicoes
 ###############################################################
 
 
 # --------------------------------------------------------------
-# 1) Distribuicao de jogos por editora (ordenada desc por quantidade)
+# 17 Distribuicao de jogos por editora (ordenada desc por quantidade)
 # --------------------------------------------------------------
 PREFIX : <http://www.di.uminho.pt/rpcw2026/pg60273#>
 
@@ -89,7 +88,7 @@ ORDER BY DESC(?numJogos) ?editora
 
 
 # --------------------------------------------------------------
-# 2) Distribuicao de jogos por categoria
+# 18 Distribuicao de jogos por categoria
 # --------------------------------------------------------------
 PREFIX : <http://www.di.uminho.pt/rpcw2026/pg60273#>
 
@@ -102,7 +101,7 @@ ORDER BY DESC(?numJogos)
 
 
 # --------------------------------------------------------------
-# 3) Jogos com mecanicas mais complexas (mais de 3 mecanicas):
+# 19 Jogos com mecanicas mais complexas (mais de 3 mecanicas):
 #    id, nome e lista de mecanicas
 # --------------------------------------------------------------
 PREFIX : <http://www.di.uminho.pt/rpcw2026/pg60273#>
@@ -121,7 +120,7 @@ ORDER BY ?nome
 
 
 # --------------------------------------------------------------
-# 4) Ludoteca escolar: so jogos da categoria Family,
+# 20 Ludoteca escolar: so jogos da categoria Family,
 #    lista (sem repeticoes) do nome do jogo, dos seus criadores
 #    e das suas mecanicas
 # --------------------------------------------------------------
@@ -139,3 +138,45 @@ WHERE {
 }
 GROUP BY ?jogo
 ORDER BY ?jogo
+
+
+###############################################################
+# Inferência de novo conhecimento 
+###############################################################
+
+
+# --------------------------------------------------------------
+# 21 CONSTRUCT - calcular os triplos de isPublishedBy (Jogo -> Editora)
+# --------------------------------------------------------------
+PREFIX : <http://www.di.uminho.pt/rpcw2026/pg60273#>
+ 
+CONSTRUCT { ?jogo :isPublishedBy ?editora . }
+WHERE     { ?editora :publicou ?jogo . }
+ 
+ 
+# --------------------------------------------------------------
+# 22 INSERT - acrescentar esses triplos a ontologia
+# --------------------------------------------------------------
+PREFIX : <http://www.di.uminho.pt/rpcw2026/pg60273#>
+ 
+INSERT { ?jogo :isPublishedBy ?editora . }
+WHERE  { ?editora :publicou ?jogo . }
+ 
+ 
+# --------------------------------------------------------------
+# 23 CONSTRUCT - calcular os triplos de hasMechanic (Jogo -> Mecanica)
+# --------------------------------------------------------------
+PREFIX : <http://www.di.uminho.pt/rpcw2026/pg60273#>
+ 
+CONSTRUCT { ?jogo :hasMechanic ?mecanica . }
+WHERE     { ?mecanica :usadaEm ?jogo . }
+ 
+ 
+# --------------------------------------------------------------
+# 24 INSERT - acrescentar esses triplos a ontologia
+# --------------------------------------------------------------
+PREFIX : <http://www.di.uminho.pt/rpcw2026/pg60273#>
+ 
+INSERT { ?jogo :hasMechanic ?mecanica . }
+WHERE  { ?mecanica :usadaEm ?jogo . }
+ 
