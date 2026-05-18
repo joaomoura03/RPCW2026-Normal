@@ -8,7 +8,7 @@ Criei as classes Animal com as subclasses Ave e Mamifero com as respetivas subcl
 
 ### Queries
 
-Criei as queries para a ontologia
+Criei as queries para a ontologia. na query 1 uso rdfs:subClassOf+. O + é um property path: "1 ou mais saltos de subClassOf". Apanha Corvo mesmo estando a 2 níveis de Animal. Na query 3 usei o UNION porque na pergunta pedia "caracteristicas ou sentimentos" e na ontologia defini como duas propriedades distintas. 
 
 
 ## Exercicio 2
@@ -23,4 +23,4 @@ Depois de ter a ontologia base criada, com base nos ficheiros json fornecidos, p
 
 ### Sparql
 
-Criei queries simples para a ontologia povoada, de seguida criei queries de cálculo de distribuições e depois de inferência de novo conhecimento
+Criei queries simples para a ontologia povoada, de seguida criei queries de cálculo de distribuições e depois de inferência de novo conhecimento. Na query de distribuição faço GROUP BY + COUNT(?j) AS ?n para agrupar por editora/categoria e contar os jogos em cada grupo. O AS dá o nome à coluna degenerada. 
