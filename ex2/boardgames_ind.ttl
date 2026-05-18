@@ -1,0 +1,904 @@
+@prefix : <http://www.di.uminho.pt/rpcw2026/pg60273#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.di.uminho.pt/rpcw2026/pg60273> a owl:Ontology .
+
+:ano a owl:DatatypeProperty ;
+    rdfs:domain :Premio ;
+    rdfs:range xsd:integer .
+
+:atribuidoA a owl:ObjectProperty ;
+    rdfs:domain :Premio ;
+    rdfs:range :Jogo .
+
+:autor_alan_r_moon a :Autor,
+        owl:NamedIndividual ;
+    :criou :jogo_ticket_to_ride ;
+    :id "alan-r-moon" ;
+    :nome "Alan R. Moon" .
+
+:autor_andreas_seyfarth a :Autor,
+        owl:NamedIndividual ;
+    :criou :jogo_puerto_rico ;
+    :id "andreas-seyfarth" ;
+    :nome "Andreas Seyfarth" .
+
+:autor_antoine_bauza a :Autor,
+        owl:NamedIndividual ;
+    :criou :jogo_7_wonders ;
+    :id "antoine-bauza" ;
+    :nome "Antoine Bauza" .
+
+:autor_christian_t_petersen a :Autor,
+        owl:NamedIndividual ;
+    :criou :jogo_twilight_imperium_4 ;
+    :id "christian-t-petersen" ;
+    :nome "Christian T. Petersen" .
+
+:autor_cole_wehrle a :Autor,
+        owl:NamedIndividual ;
+    :criou :jogo_root ;
+    :id "cole-wehrle" ;
+    :nome "Cole Wehrle" .
+
+:autor_donald_x_vaccarino a :Autor,
+        owl:NamedIndividual ;
+    :criou :jogo_dominion ;
+    :id "donald-x-vaccarino" ;
+    :nome "Donald X. Vaccarino" .
+
+:autor_elizabeth_hargrave a :Autor,
+        owl:NamedIndividual ;
+    :criou :jogo_wingspan ;
+    :id "elizabeth-hargrave" ;
+    :nome "Elizabeth Hargrave" .
+
+:autor_eric_m_lang a :Autor,
+        owl:NamedIndividual ;
+    :criou :jogo_blood_rage ;
+    :id "eric-m-lang" ;
+    :nome "Eric M. Lang" .
+
+:autor_isaac_childres a :Autor,
+        owl:NamedIndividual ;
+    :criou :jogo_gloomhaven ;
+    :id "isaac-childres" ;
+    :nome "Isaac Childres" .
+
+:autor_jacob_fryxelius a :Autor,
+        owl:NamedIndividual ;
+    :criou :jogo_terraforming_mars ;
+    :id "jacob-fryxelius" ;
+    :nome "Jacob Fryxelius" .
+
+:autor_james_a_wilson a :Autor,
+        owl:NamedIndividual ;
+    :criou :jogo_everdell ;
+    :id "james-a-wilson" ;
+    :nome "James A. Wilson" .
+
+:autor_jamey_stegmaier a :Autor,
+        owl:NamedIndividual ;
+    :criou :jogo_scythe ;
+    :id "jamey-stegmaier" ;
+    :nome "Jamey Stegmaier" .
+
+:autor_klaus_jurgen_wrede a :Autor,
+        owl:NamedIndividual ;
+    :criou :jogo_carcassonne ;
+    :id "klaus-jurgen-wrede" ;
+    :nome "Klaus-Jürgen Wrede" .
+
+:autor_klaus_teuber a :Autor,
+        owl:NamedIndividual ;
+    :criou :jogo_catan ;
+    :id "klaus-teuber" ;
+    :nome "Klaus Teuber" .
+
+:autor_marc_andre a :Autor,
+        owl:NamedIndividual ;
+    :criou :jogo_splendor ;
+    :id "marc-andre" ;
+    :nome "Marc André" .
+
+:autor_martin_wallace a :Autor,
+        owl:NamedIndividual ;
+    :criou :jogo_brass_birmingham ;
+    :id "martin-wallace" ;
+    :nome "Martin Wallace" .
+
+:autor_mathias_wigge a :Autor,
+        owl:NamedIndividual ;
+    :criou :jogo_ark_nova ;
+    :id "mathias-wigge" ;
+    :nome "Mathias Wigge" .
+
+:autor_matt_leacock a :Autor,
+        owl:NamedIndividual ;
+    :criou :jogo_pandemic ;
+    :id "matt-leacock" ;
+    :nome "Matt Leacock" .
+
+:autor_michael_kiesling a :Autor,
+        owl:NamedIndividual ;
+    :criou :jogo_azul ;
+    :id "michael-kiesling" ;
+    :nome "Michael Kiesling" .
+
+:autor_min_elwen a :Autor,
+        owl:NamedIndividual ;
+    :criou :jogo_lost_ruins_of_arnak ;
+    :id "min-elwen" ;
+    :nome "Min & Elwen" .
+
+:autor_paul_dennen a :Autor,
+        owl:NamedIndividual ;
+    :criou :jogo_dune_imperium ;
+    :id "paul-dennen" ;
+    :nome "Paul Dennen" .
+
+:autor_r_eric_reuss a :Autor,
+        owl:NamedIndividual ;
+    :criou :jogo_spirit_island ;
+    :id "r-eric-reuss" ;
+    :nome "R. Eric Reuss" .
+
+:autor_randy_flynn a :Autor,
+        owl:NamedIndividual ;
+    :criou :jogo_cascadia ;
+    :id "randy-flynn" ;
+    :nome "Randy Flynn" .
+
+:autor_richard_garfield a :Autor,
+        owl:NamedIndividual ;
+    :criou :jogo_king_of_tokyo ;
+    :id "richard-garfield" ;
+    :nome "Richard Garfield" .
+
+:autor_stefan_feld a :Autor,
+        owl:NamedIndividual ;
+    :criou :jogo_castles_of_burgundy ;
+    :id "stefan-feld" ;
+    :nome "Stefan Feld" .
+
+:autor_uwe_rosenberg a :Autor,
+        owl:NamedIndividual ;
+    :criou :jogo_patchwork ;
+    :id "uwe-rosenberg" ;
+    :nome "Uwe Rosenberg" .
+
+:autor_vlaada_chvatil a :Autor,
+        owl:NamedIndividual ;
+    :criou :jogo_codenames ;
+    :id "vlaada-chvatil" ;
+    :nome "Vlaada Chvátil" .
+
+:categoria a owl:DatatypeProperty ;
+    rdfs:domain :Jogo ;
+    rdfs:range xsd:string .
+
+:criou a owl:ObjectProperty ;
+    rdfs:domain :Autor ;
+    rdfs:range :Jogo .
+
+:descricao a owl:DatatypeProperty ;
+    rdfs:domain :Jogo ;
+    rdfs:range xsd:string .
+
+:editora_cephalofair a :Editora,
+        owl:NamedIndividual ;
+    :id "cephalofair" ;
+    :nome "Cephalofair Games" ;
+    :pais "USA" ;
+    :publicou :jogo_gloomhaven .
+
+:editora_cmon a :Editora,
+        owl:NamedIndividual ;
+    :id "cmon" ;
+    :nome "CMON" ;
+    :pais "Singapore" ;
+    :publicou :jogo_blood_rage .
+
+:editora_czech_games_edition a :Editora,
+        owl:NamedIndividual ;
+    :id "czech-games-edition" ;
+    :nome "Czech Games Edition" ;
+    :pais "Czech Republic" ;
+    :publicou :jogo_codenames,
+        :jogo_lost_ruins_of_arnak .
+
+:editora_days_of_wonder a :Editora,
+        owl:NamedIndividual ;
+    :id "days-of-wonder" ;
+    :nome "Days of Wonder" ;
+    :pais "France" ;
+    :publicou :jogo_ticket_to_ride .
+
+:editora_dire_wolf a :Editora,
+        owl:NamedIndividual ;
+    :id "dire-wolf" ;
+    :nome "Dire Wolf" ;
+    :pais "USA" ;
+    :publicou :jogo_dune_imperium .
+
+:editora_fantasy_flight_games a :Editora,
+        owl:NamedIndividual ;
+    :id "fantasy-flight-games" ;
+    :nome "Fantasy Flight Games" ;
+    :pais "USA" ;
+    :publicou :jogo_twilight_imperium_4 .
+
+:editora_feuerland_spiele a :Editora,
+        owl:NamedIndividual ;
+    :id "feuerland-spiele" ;
+    :nome "Feuerland Spiele" ;
+    :pais "Germany" ;
+    :publicou :jogo_ark_nova .
+
+:editora_flatout_games a :Editora,
+        owl:NamedIndividual ;
+    :id "flatout-games" ;
+    :nome "Flatout Games" ;
+    :pais "USA" ;
+    :publicou :jogo_cascadia .
+
+:editora_fryxgames a :Editora,
+        owl:NamedIndividual ;
+    :id "fryxgames" ;
+    :nome "FryxGames" ;
+    :pais "Sweden" ;
+    :publicou :jogo_terraforming_mars .
+
+:editora_greater_than_games a :Editora,
+        owl:NamedIndividual ;
+    :id "greater-than-games" ;
+    :nome "Greater Than Games" ;
+    :pais "USA" ;
+    :publicou :jogo_spirit_island .
+
+:editora_hans_im_gluck a :Editora,
+        owl:NamedIndividual ;
+    :id "hans-im-gluck" ;
+    :nome "Hans im Glück" ;
+    :pais "Germany" ;
+    :publicou :jogo_carcassonne .
+
+:editora_iello a :Editora,
+        owl:NamedIndividual ;
+    :id "iello" ;
+    :nome "IELLO" ;
+    :pais "France" ;
+    :publicou :jogo_king_of_tokyo .
+
+:editora_kosmos a :Editora,
+        owl:NamedIndividual ;
+    :id "kosmos" ;
+    :nome "KOSMOS" ;
+    :pais "Germany" ;
+    :publicou :jogo_catan .
+
+:editora_leder_games a :Editora,
+        owl:NamedIndividual ;
+    :id "leder-games" ;
+    :nome "Leder Games" ;
+    :pais "USA" ;
+    :publicou :jogo_root .
+
+:editora_lookout_games a :Editora,
+        owl:NamedIndividual ;
+    :id "lookout-games" ;
+    :nome "Lookout Games" ;
+    :pais "Germany" ;
+    :publicou :jogo_patchwork .
+
+:editora_plan_b_games a :Editora,
+        owl:NamedIndividual ;
+    :id "plan-b-games" ;
+    :nome "Plan B Games" ;
+    :pais "Canada" ;
+    :publicou :jogo_azul .
+
+:editora_ravensburger a :Editora,
+        owl:NamedIndividual ;
+    :id "ravensburger" ;
+    :nome "Ravensburger" ;
+    :pais "Germany" ;
+    :publicou :jogo_castles_of_burgundy,
+        :jogo_puerto_rico .
+
+:editora_repos_production a :Editora,
+        owl:NamedIndividual ;
+    :id "repos-production" ;
+    :nome "Repos Production" ;
+    :pais "Belgium" ;
+    :publicou :jogo_7_wonders .
+
+:editora_rio_grande_games a :Editora,
+        owl:NamedIndividual ;
+    :id "rio-grande-games" ;
+    :nome "Rio Grande Games" ;
+    :pais "USA" ;
+    :publicou :jogo_dominion .
+
+:editora_roxley a :Editora,
+        owl:NamedIndividual ;
+    :id "roxley" ;
+    :nome "Roxley" ;
+    :pais "Canada" ;
+    :publicou :jogo_brass_birmingham .
+
+:editora_space_cowboys a :Editora,
+        owl:NamedIndividual ;
+    :id "space-cowboys" ;
+    :nome "Space Cowboys" ;
+    :pais "France" ;
+    :publicou :jogo_splendor .
+
+:editora_starling_games a :Editora,
+        owl:NamedIndividual ;
+    :id "starling-games" ;
+    :nome "Starling Games" ;
+    :pais "USA" ;
+    :publicou :jogo_everdell .
+
+:editora_stonemaier_games a :Editora,
+        owl:NamedIndividual ;
+    :id "stonemaier-games" ;
+    :nome "Stonemaier Games" ;
+    :pais "USA" ;
+    :publicou :jogo_scythe,
+        :jogo_wingspan .
+
+:editora_z_man_games a :Editora,
+        owl:NamedIndividual ;
+    :id "z-man-games" ;
+    :nome "Z-Man Games" ;
+    :pais "USA" ;
+    :publicou :jogo_pandemic .
+
+:id a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+:maxJogadores a owl:DatatypeProperty ;
+    rdfs:domain :Jogo ;
+    rdfs:range xsd:integer .
+
+:mecanica_area_majority a :Mecanica,
+        owl:NamedIndividual ;
+    :id "area-majority" ;
+    :nome "Area Majority / Influence" ;
+    :usadaEm :jogo_blood_rage,
+        :jogo_carcassonne,
+        :jogo_root,
+        :jogo_scythe,
+        :jogo_twilight_imperium_4 .
+
+:mecanica_card_drafting a :Mecanica,
+        owl:NamedIndividual ;
+    :id "card-drafting" ;
+    :nome "Card Drafting" ;
+    :usadaEm :jogo_7_wonders,
+        :jogo_blood_rage,
+        :jogo_wingspan .
+
+:mecanica_cooperative_game a :Mecanica,
+        owl:NamedIndividual ;
+    :id "cooperative-game" ;
+    :nome "Cooperative Game" ;
+    :usadaEm :jogo_gloomhaven,
+        :jogo_pandemic,
+        :jogo_spirit_island .
+
+:mecanica_deck_building a :Mecanica,
+        owl:NamedIndividual ;
+    :id "deck-building" ;
+    :nome "Deck, Bag, and Pool Building" ;
+    :usadaEm :jogo_ark_nova,
+        :jogo_dominion,
+        :jogo_dune_imperium,
+        :jogo_lost_ruins_of_arnak .
+
+:mecanica_dice_rolling a :Mecanica,
+        owl:NamedIndividual ;
+    :id "dice-rolling" ;
+    :nome "Dice Rolling" ;
+    :usadaEm :jogo_castles_of_burgundy,
+        :jogo_catan,
+        :jogo_king_of_tokyo .
+
+:mecanica_engine_building a :Mecanica,
+        owl:NamedIndividual ;
+    :id "engine-building" ;
+    :nome "Engine Building" ;
+    :usadaEm :jogo_scythe,
+        :jogo_terraforming_mars .
+
+:mecanica_grid_movement a :Mecanica,
+        owl:NamedIndividual ;
+    :id "grid-movement" ;
+    :nome "Grid Movement" ;
+    :usadaEm :jogo_gloomhaven,
+        :jogo_scythe .
+
+:mecanica_hand_management a :Mecanica,
+        owl:NamedIndividual ;
+    :id "hand-management" ;
+    :nome "Hand Management" ;
+    :usadaEm :jogo_gloomhaven,
+        :jogo_terraforming_mars,
+        :jogo_ticket_to_ride .
+
+:mecanica_network_building a :Mecanica,
+        owl:NamedIndividual ;
+    :id "network-building" ;
+    :nome "Network and Route Building" ;
+    :usadaEm :jogo_brass_birmingham .
+
+:mecanica_push_your_luck a :Mecanica,
+        owl:NamedIndividual ;
+    :id "push-your-luck" ;
+    :nome "Push Your Luck" ;
+    :usadaEm :jogo_codenames,
+        :jogo_king_of_tokyo .
+
+:mecanica_route_building a :Mecanica,
+        owl:NamedIndividual ;
+    :id "route-building" ;
+    :nome "Route Building" ;
+    :usadaEm :jogo_catan,
+        :jogo_ticket_to_ride .
+
+:mecanica_set_collection a :Mecanica,
+        owl:NamedIndividual ;
+    :id "set-collection" ;
+    :nome "Set Collection" ;
+    :usadaEm :jogo_azul,
+        :jogo_pandemic,
+        :jogo_splendor,
+        :jogo_terraforming_mars,
+        :jogo_ticket_to_ride,
+        :jogo_wingspan .
+
+:mecanica_tile_placement a :Mecanica,
+        owl:NamedIndividual ;
+    :id "tile-placement" ;
+    :nome "Tile Placement" ;
+    :usadaEm :jogo_azul,
+        :jogo_carcassonne,
+        :jogo_cascadia,
+        :jogo_castles_of_burgundy,
+        :jogo_catan,
+        :jogo_patchwork,
+        :jogo_terraforming_mars .
+
+:mecanica_variable_player_powers a :Mecanica,
+        owl:NamedIndividual ;
+    :id "variable-player-powers" ;
+    :nome "Variable Player Powers" ;
+    :usadaEm :jogo_blood_rage,
+        :jogo_gloomhaven,
+        :jogo_pandemic,
+        :jogo_root,
+        :jogo_scythe,
+        :jogo_spirit_island,
+        :jogo_terraforming_mars,
+        :jogo_twilight_imperium_4 .
+
+:mecanica_worker_placement a :Mecanica,
+        owl:NamedIndividual ;
+    :id "worker-placement" ;
+    :nome "Worker Placement" ;
+    :usadaEm :jogo_dune_imperium,
+        :jogo_everdell,
+        :jogo_lost_ruins_of_arnak .
+
+:minJogadores a owl:DatatypeProperty ;
+    rdfs:domain :Jogo ;
+    rdfs:range xsd:integer .
+
+:nome a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+:pais a owl:DatatypeProperty ;
+    rdfs:domain :Editora ;
+    rdfs:range xsd:string .
+
+:premio_dsp_2011 a :Premio,
+        owl:NamedIndividual ;
+    :ano 2011 ;
+    :atribuidoA :jogo_7_wonders ;
+    :id "dsp-2011" ;
+    :nome "Deutscher Spiele Preis" .
+
+:premio_dsp_2017 a :Premio,
+        owl:NamedIndividual ;
+    :ano 2017 ;
+    :atribuidoA :jogo_terraforming_mars ;
+    :id "dsp-2017" ;
+    :nome "Deutscher Spiele Preis" .
+
+:premio_dsp_2022 a :Premio,
+        owl:NamedIndividual ;
+    :ano 2022 ;
+    :atribuidoA :jogo_ark_nova ;
+    :id "dsp-2022" ;
+    :nome "Deutscher Spiele Preis" .
+
+:premio_gg_2013 a :Premio,
+        owl:NamedIndividual ;
+    :ano 2013 ;
+    :atribuidoA :jogo_pandemic ;
+    :id "gg-2013" ;
+    :nome "Golden Geek Board Game of the Year" .
+
+:premio_gg_2016 a :Premio,
+        owl:NamedIndividual ;
+    :ano 2016 ;
+    :atribuidoA :jogo_scythe ;
+    :id "gg-2016" ;
+    :nome "Golden Geek Board Game of the Year" .
+
+:premio_gg_2017 a :Premio,
+        owl:NamedIndividual ;
+    :ano 2017 ;
+    :atribuidoA :jogo_gloomhaven ;
+    :id "gg-2017" ;
+    :nome "Golden Geek Board Game of the Year" .
+
+:premio_gg_2018 a :Premio,
+        owl:NamedIndividual ;
+    :ano 2018 ;
+    :atribuidoA :jogo_root ;
+    :id "gg-2018" ;
+    :nome "Golden Geek Board Game of the Year" .
+
+:premio_ksdj_2019 a :Premio,
+        owl:NamedIndividual ;
+    :ano 2019 ;
+    :atribuidoA :jogo_wingspan ;
+    :id "ksdj-2019" ;
+    :nome "Kennerspiel des Jahres" .
+
+:premio_sdj_1995 a :Premio,
+        owl:NamedIndividual ;
+    :ano 1995 ;
+    :atribuidoA :jogo_catan ;
+    :id "sdj-1995" ;
+    :nome "Spiel des Jahres" .
+
+:premio_sdj_2001 a :Premio,
+        owl:NamedIndividual ;
+    :ano 2001 ;
+    :atribuidoA :jogo_carcassonne ;
+    :id "sdj-2001" ;
+    :nome "Spiel des Jahres" .
+
+:premio_sdj_2004 a :Premio,
+        owl:NamedIndividual ;
+    :ano 2004 ;
+    :atribuidoA :jogo_ticket_to_ride ;
+    :id "sdj-2004" ;
+    :nome "Spiel des Jahres" .
+
+:premio_sdj_2009 a :Premio,
+        owl:NamedIndividual ;
+    :ano 2009 ;
+    :atribuidoA :jogo_dominion ;
+    :id "sdj-2009" ;
+    :nome "Spiel des Jahres" .
+
+:premio_sdj_2016 a :Premio,
+        owl:NamedIndividual ;
+    :ano 2016 ;
+    :atribuidoA :jogo_codenames ;
+    :id "sdj-2016" ;
+    :nome "Spiel des Jahres" .
+
+:premio_sdj_2018 a :Premio,
+        owl:NamedIndividual ;
+    :ano 2018 ;
+    :atribuidoA :jogo_azul ;
+    :id "sdj-2018" ;
+    :nome "Spiel des Jahres" .
+
+:premio_sdj_2022 a :Premio,
+        owl:NamedIndividual ;
+    :ano 2022 ;
+    :atribuidoA :jogo_cascadia ;
+    :id "sdj-2022" ;
+    :nome "Spiel des Jahres" .
+
+:publicou a owl:ObjectProperty ;
+    rdfs:domain :Editora ;
+    rdfs:range :Jogo .
+
+:tempoJogo a owl:DatatypeProperty ;
+    rdfs:domain :Jogo ;
+    rdfs:range xsd:integer .
+
+:usadaEm a owl:ObjectProperty ;
+    rdfs:domain :Mecanica ;
+    rdfs:range :Jogo .
+
+:jogo_puerto_rico a :Jogo,
+        owl:NamedIndividual ;
+    :categoria "Strategy" ;
+    :descricao "Ship goods, construct buildings, and choose roles to become the most prosperous in Puerto Rico." ;
+    :id "puerto-rico" ;
+    :maxJogadores 5 ;
+    :minJogadores 3 ;
+    :nome "Puerto Rico" ;
+    :tempoJogo 150 .
+
+:jogo_brass_birmingham a :Jogo,
+        owl:NamedIndividual ;
+    :categoria "Strategy" ;
+    :descricao "Build networks, grow industries, and navigate the world of the Industrial Revolution." ;
+    :id "brass-birmingham" ;
+    :maxJogadores 4 ;
+    :minJogadores 2 ;
+    :nome "Brass: Birmingham" ;
+    :tempoJogo 120 .
+
+:jogo_everdell a :Jogo,
+        owl:NamedIndividual ;
+    :categoria "Strategy" ;
+    :descricao "A game of dynamic tableau building and worker placement in a charming forest." ;
+    :id "everdell" ;
+    :maxJogadores 4 ;
+    :minJogadores 1 ;
+    :nome "Everdell" ;
+    :tempoJogo 80 .
+
+:jogo_patchwork a :Jogo,
+        owl:NamedIndividual ;
+    :categoria "Family" ;
+    :descricao "Compete to build the most aesthetic (and high-scoring) patchwork quilt." ;
+    :id "patchwork" ;
+    :maxJogadores 2 ;
+    :minJogadores 2 ;
+    :nome "Patchwork" ;
+    :tempoJogo 30 .
+
+:jogo_splendor a :Jogo,
+        owl:NamedIndividual ;
+    :categoria "Family" ;
+    :descricao "Renaissance merchants race to grab gems, acquire property, and please nobility." ;
+    :id "splendor" ;
+    :maxJogadores 4 ;
+    :minJogadores 2 ;
+    :nome "Splendor" ;
+    :tempoJogo 30 .
+
+:jogo_7_wonders a :Jogo,
+        owl:NamedIndividual ;
+    :categoria "Strategy" ;
+    :descricao "Draft cards to develop your ancient civilization and build its Wonder of the World." ;
+    :id "7-wonders" ;
+    :maxJogadores 7 ;
+    :minJogadores 2 ;
+    :nome "7 Wonders" ;
+    :tempoJogo 30 .
+
+:jogo_ark_nova a :Jogo,
+        owl:NamedIndividual ;
+    :categoria "Strategy" ;
+    :descricao "Plan and design a modern, scientifically managed zoo to support conservation projects." ;
+    :id "ark-nova" ;
+    :maxJogadores 4 ;
+    :minJogadores 1 ;
+    :nome "Ark Nova" ;
+    :tempoJogo 150 .
+
+:jogo_cascadia a :Jogo,
+        owl:NamedIndividual ;
+    :categoria "Family" ;
+    :descricao "Create the most harmonious ecosystem as you draft habitats and wildlife." ;
+    :id "cascadia" ;
+    :maxJogadores 4 ;
+    :minJogadores 1 ;
+    :nome "Cascadia" ;
+    :tempoJogo 45 .
+
+:jogo_castles_of_burgundy a :Jogo,
+        owl:NamedIndividual ;
+    :categoria "Strategy" ;
+    :descricao "Plan, trade, and build your Burgundian estate to prosperity and prominence." ;
+    :id "castles-of-burgundy" ;
+    :maxJogadores 4 ;
+    :minJogadores 2 ;
+    :nome "The Castles of Burgundy" ;
+    :tempoJogo 90 .
+
+:jogo_codenames a :Jogo,
+        owl:NamedIndividual ;
+    :categoria "Party" ;
+    :descricao "Give your team clever one-word clues to help them spot their agents in the field." ;
+    :id "codenames" ;
+    :maxJogadores 8 ;
+    :minJogadores 2 ;
+    :nome "Codenames" ;
+    :tempoJogo 15 .
+
+:jogo_dominion a :Jogo,
+        owl:NamedIndividual ;
+    :categoria "Strategy" ;
+    :descricao "Acquire lands, hire subjects, and build the ultimate deck to rule your kingdom." ;
+    :id "dominion" ;
+    :maxJogadores 4 ;
+    :minJogadores 2 ;
+    :nome "Dominion" ;
+    :tempoJogo 30 .
+
+:jogo_dune_imperium a :Jogo,
+        owl:NamedIndividual ;
+    :categoria "Strategy" ;
+    :descricao "Influence, intrigue, and combat in the universe of Dune using deck-building and worker placement." ;
+    :id "dune-imperium" ;
+    :maxJogadores 4 ;
+    :minJogadores 1 ;
+    :nome "Dune: Imperium" ;
+    :tempoJogo 120 .
+
+:jogo_king_of_tokyo a :Jogo,
+        owl:NamedIndividual ;
+    :categoria "Party" ;
+    :descricao "Mutant monsters, gigantic robots, and fierce aliens battle for control of Tokyo." ;
+    :id "king-of-tokyo" ;
+    :maxJogadores 6 ;
+    :minJogadores 2 ;
+    :nome "King of Tokyo" ;
+    :tempoJogo 30 .
+
+:jogo_lost_ruins_of_arnak a :Jogo,
+        owl:NamedIndividual ;
+    :categoria "Strategy" ;
+    :descricao "Explore a mysterious island, discover artifacts, and face formidable guardians." ;
+    :id "lost-ruins-of-arnak" ;
+    :maxJogadores 4 ;
+    :minJogadores 1 ;
+    :nome "Lost Ruins of Arnak" ;
+    :tempoJogo 120 .
+
+:jogo_spirit_island a :Jogo,
+        owl:NamedIndividual ;
+    :categoria "Strategy" ;
+    :descricao "Island Spirits join forces to defend their home from colonizing Invaders." ;
+    :id "spirit-island" ;
+    :maxJogadores 4 ;
+    :minJogadores 1 ;
+    :nome "Spirit Island" ;
+    :tempoJogo 120 .
+
+:jogo_twilight_imperium_4 a :Jogo,
+        owl:NamedIndividual ;
+    :categoria "Strategy" ;
+    :descricao "Build an empire through trade, politics, and warfare in a galaxy-spanning space opera." ;
+    :id "twilight-imperium-4" ;
+    :maxJogadores 6 ;
+    :minJogadores 3 ;
+    :nome "Twilight Imperium: Fourth Edition" ;
+    :tempoJogo 480 .
+
+:jogo_azul a :Jogo,
+        owl:NamedIndividual ;
+    :categoria "Family" ;
+    :descricao "Players take turns drafting colored tiles from suppliers to their player board to score points." ;
+    :id "azul" ;
+    :maxJogadores 4 ;
+    :minJogadores 2 ;
+    :nome "Azul" ;
+    :tempoJogo 45 .
+
+:jogo_blood_rage a :Jogo,
+        owl:NamedIndividual ;
+    :categoria "Strategy" ;
+    :descricao "Ragnarök has come! Draft cards, lead your Viking clan to glory, and die in battle." ;
+    :id "blood-rage" ;
+    :maxJogadores 4 ;
+    :minJogadores 2 ;
+    :nome "Blood Rage" ;
+    :tempoJogo 90 .
+
+:jogo_carcassonne a :Jogo,
+        owl:NamedIndividual ;
+    :categoria "Family" ;
+    :descricao "Players draw and place a tile with a piece of southern French landscape on it." ;
+    :id "carcassonne" ;
+    :maxJogadores 5 ;
+    :minJogadores 2 ;
+    :nome "Carcassonne" ;
+    :tempoJogo 45 .
+
+:jogo_root a :Jogo,
+        owl:NamedIndividual ;
+    :categoria "Strategy" ;
+    :descricao "A game of woodland might and right, with highly asymmetric factions." ;
+    :id "root" ;
+    :maxJogadores 4 ;
+    :minJogadores 2 ;
+    :nome "Root" ;
+    :tempoJogo 90 .
+
+:jogo_wingspan a :Jogo,
+        owl:NamedIndividual ;
+    :categoria "Strategy" ;
+    :descricao "Attract a beautiful and diverse collection of birds to your wildlife preserve." ;
+    :id "wingspan" ;
+    :maxJogadores 5 ;
+    :minJogadores 1 ;
+    :nome "Wingspan" ;
+    :tempoJogo 70 .
+
+:jogo_catan a :Jogo,
+        owl:NamedIndividual ;
+    :categoria "Family" ;
+    :descricao "Players take on the roles of settlers, each attempting to build and develop holdings while trading and acquiring resources." ;
+    :id "catan" ;
+    :maxJogadores 4 ;
+    :minJogadores 3 ;
+    :nome "Catan" ;
+    :tempoJogo 120 .
+
+:jogo_pandemic a :Jogo,
+        owl:NamedIndividual ;
+    :categoria "Family" ;
+    :descricao "Your team of experts must prevent the world from succumbing to a viral pandemic." ;
+    :id "pandemic" ;
+    :maxJogadores 4 ;
+    :minJogadores 2 ;
+    :nome "Pandemic" ;
+    :tempoJogo 45 .
+
+:jogo_ticket_to_ride a :Jogo,
+        owl:NamedIndividual ;
+    :categoria "Family" ;
+    :descricao "Players collect cards of various types of train cars they then use to claim railway routes in North America." ;
+    :id "ticket-to-ride" ;
+    :maxJogadores 5 ;
+    :minJogadores 2 ;
+    :nome "Ticket to Ride" ;
+    :tempoJogo 60 .
+
+:jogo_gloomhaven a :Jogo,
+        owl:NamedIndividual ;
+    :categoria "Strategy" ;
+    :descricao "A cooperative game of tactical combat in a unique, evolving fantasy world." ;
+    :id "gloomhaven" ;
+    :maxJogadores 4 ;
+    :minJogadores 1 ;
+    :nome "Gloomhaven" ;
+    :tempoJogo 120 .
+
+:jogo_scythe a :Jogo,
+        owl:NamedIndividual ;
+    :categoria "Strategy" ;
+    :descricao "An engine-building, asymmetric, competitive board game set in an alternate-history 1920s period." ;
+    :id "scythe" ;
+    :maxJogadores 5 ;
+    :minJogadores 1 ;
+    :nome "Scythe" ;
+    :tempoJogo 115 .
+
+:jogo_terraforming_mars a :Jogo,
+        owl:NamedIndividual ;
+    :categoria "Strategy" ;
+    :descricao "Players control corporations and buy and play cards to terraform the planet Mars." ;
+    :id "terraforming-mars" ;
+    :maxJogadores 5 ;
+    :minJogadores 1 ;
+    :nome "Terraforming Mars" ;
+    :tempoJogo 120 .
+
+:Mecanica a owl:Class .
+
+:Premio a owl:Class .
+
+:Editora a owl:Class .
+
+:Autor a owl:Class .
+
+:Jogo a owl:Class .
+

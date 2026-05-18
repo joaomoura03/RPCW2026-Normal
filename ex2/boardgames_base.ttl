@@ -1,0 +1,81 @@
+@prefix :     <http://www.di.uminho.pt/rpcw2026/pg60273#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.di.uminho.pt/rpcw2026/pg60273> .
+
+<http://www.di.uminho.pt/rpcw2026/pg60273> rdf:type owl:Ontology .
+
+#################################################################
+#    Classes  (uma por entidade dos datasets JSON)
+#################################################################
+
+:Jogo     rdf:type owl:Class .
+:Autor    rdf:type owl:Class .
+:Editora  rdf:type owl:Class .
+:Mecanica rdf:type owl:Class .
+:Premio   rdf:type owl:Class .
+
+#################################################################
+#    Object Properties  (seguem a orientacao dos JSON)
+#################################################################
+
+# autores.json : designedGames  ->  Autor criou Jogo
+:criou      rdf:type owl:ObjectProperty ;
+            rdfs:domain :Autor ;
+            rdfs:range  :Jogo .
+
+# editoras.json : publishedGames  ->  Editora publicou Jogo
+:publicou   rdf:type owl:ObjectProperty ;
+            rdfs:domain :Editora ;
+            rdfs:range  :Jogo .
+
+# mecanicas.json : usedInGames  ->  Mecanica usadaEm Jogo
+:usadaEm    rdf:type owl:ObjectProperty ;
+            rdfs:domain :Mecanica ;
+            rdfs:range  :Jogo .
+
+# premios.json : wonByGame  ->  Premio atribuidoA Jogo
+:atribuidoA rdf:type owl:ObjectProperty ;
+            rdfs:domain :Premio ;
+            rdfs:range  :Jogo .
+
+#################################################################
+#    Data Properties
+#################################################################
+
+# :id e :nome sao partilhados por todas as classes -> SEM dominio
+:id           rdf:type owl:DatatypeProperty ;
+              rdfs:range xsd:string .
+
+:nome         rdf:type owl:DatatypeProperty ;
+              rdfs:range xsd:string .
+
+:categoria    rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Jogo ;
+              rdfs:range  xsd:string .
+
+:minJogadores rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Jogo ;
+              rdfs:range  xsd:integer .
+
+:maxJogadores rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Jogo ;
+              rdfs:range  xsd:integer .
+
+:tempoJogo    rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Jogo ;
+              rdfs:range  xsd:integer .
+
+:descricao    rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Jogo ;
+              rdfs:range  xsd:string .
+
+:pais         rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Editora ;
+              rdfs:range  xsd:string .
+
+:ano          rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Premio ;
+              rdfs:range  xsd:integer .

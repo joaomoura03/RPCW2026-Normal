@@ -1,0 +1,68 @@
+# --------------------------------------------------------------
+# Query 1
+# Quais sao as personagens presentes na historia e a que
+# especie animal pertencem?
+# --------------------------------------------------------------
+
+PREFIX :     <http://www.di.uminho.pt/rpcw2026/fabula#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?nomePersonagem ?especie WHERE {
+  ?p a :Personagem ;
+     :nome ?nomePersonagem .
+  ?p a ?esp .
+  ?esp rdfs:subClassOf+ :Animal .
+  FILTER NOT EXISTS {
+    ?p a ?subEsp .
+    ?subEsp rdfs:subClassOf+ ?esp .
+  }
+  BIND(STRAFTER(STR(?esp), "#") AS ?especie)
+}
+ORDER BY ?nomePersonagem
+
+
+# --------------------------------------------------------------
+# Query 2
+# Que objeto possuia o Corvo no inicio da historia e onde
+# ele estava localizado?
+# --------------------------------------------------------------
+
+PREFIX : <http://www.di.uminho.pt/rpcw2026/fabula#>
+
+SELECT ?objeto ?localizacao WHERE {
+  :o_corvo :possui ?o .
+  ?o :nome ?objeto ;
+     :estaEm ?l .
+  ?l :nome ?localizacao .
+}
+
+
+# --------------------------------------------------------------
+# Query 3
+# Quais sao as caracteristicas ou sentimentos associados a
+# personagem "Raposa"?
+# --------------------------------------------------------------
+
+PREFIX : <http://www.di.uminho.pt/rpcw2026/fabula#>
+
+SELECT DISTINCT ?atributo WHERE {
+  { :a_raposa :temCaracteristica ?x }
+  UNION
+  { :a_raposa :sente ?x }
+  ?x :nome ?atributo .
+}
+ORDER BY ?atributo
+
+
+# --------------------------------------------------------------
+# Query 4
+# Que personagem enganou o Corvo?
+# (relacao de interacao entre os dois individuos)
+# --------------------------------------------------------------
+
+PREFIX : <http://www.di.uminho.pt/rpcw2026/fabula#>
+
+SELECT ?personagem WHERE {
+  ?p :enganou :o_corvo ;
+     :nome ?personagem .
+}

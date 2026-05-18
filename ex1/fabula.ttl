@@ -1,0 +1,105 @@
+@prefix :     <http://www.di.uminho.pt/rpcw2026/fabula#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.di.uminho.pt/rpcw2026/fabula> .
+
+<http://www.di.uminho.pt/rpcw2026/fabula> rdf:type owl:Ontology .
+
+#################################################################
+#    Classes
+#################################################################
+
+:Personagem     rdf:type owl:Class .
+
+:Animal         rdf:type owl:Class .
+:Ave            rdf:type owl:Class ; rdfs:subClassOf :Animal .
+:Mamifero       rdf:type owl:Class ; rdfs:subClassOf :Animal .
+:Corvo          rdf:type owl:Class ; rdfs:subClassOf :Ave .
+:Raposa         rdf:type owl:Class ; rdfs:subClassOf :Mamifero .
+
+:Objeto         rdf:type owl:Class .
+:Localizacao    rdf:type owl:Class .
+:Sentimento     rdf:type owl:Class .
+:Caracteristica rdf:type owl:Class .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+:possui            rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Personagem ;
+                   rdfs:range  :Objeto .
+
+:estaEm            rdf:type owl:ObjectProperty ;
+                   rdfs:range  :Localizacao .
+
+:sente             rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Personagem ;
+                   rdfs:range  :Sentimento .
+
+:temCaracteristica rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Personagem ;
+                   rdfs:range  :Caracteristica .
+
+:interageCom       rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Personagem ;
+                   rdfs:range  :Personagem .
+
+:enganou           rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf :interageCom .
+
+:elogiou           rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf :interageCom .
+
+:apanhou           rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Personagem ;
+                   rdfs:range  :Objeto .
+
+#################################################################
+#    Data Properties
+#################################################################
+
+:nome        rdf:type owl:DatatypeProperty ;
+             rdfs:range xsd:string .
+
+:descricao   rdf:type owl:DatatypeProperty ;
+             rdfs:range xsd:string .
+
+:corPlumagem rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Corvo ;
+             rdfs:range  xsd:string .
+
+#################################################################
+#    Individuals
+#################################################################
+
+:o_corvo  rdf:type owl:NamedIndividual , :Corvo , :Personagem ;
+          :nome "Mestre Corvo" ;
+          :corPlumagem "negra e brilhante" ;
+          :possui :o_queijo ;
+          :estaEm :arvore ;
+          :sente :vaidade , :vergonha , :confusao .
+
+:a_raposa rdf:type owl:NamedIndividual , :Raposa , :Personagem ;
+          :nome "Mestre Raposa" ;
+          :temCaracteristica :astucia , :adulacao ;
+          :enganou :o_corvo ;
+          :elogiou :o_corvo ;
+          :apanhou :o_queijo .
+
+:o_queijo rdf:type owl:NamedIndividual , :Objeto ;
+          :nome "Queijo" ;
+          :descricao "um apetitoso e valioso queijo" ;
+          :estaEm :arvore .
+
+:arvore   rdf:type owl:NamedIndividual , :Localizacao ;
+          :nome "Árvore" ;
+          :descricao "uma alta árvore no bosque" .
+
+:vaidade  rdf:type owl:NamedIndividual , :Sentimento ; :nome "Vaidade" .
+:vergonha rdf:type owl:NamedIndividual , :Sentimento ; :nome "Vergonha" .
+:confusao rdf:type owl:NamedIndividual , :Sentimento ; :nome "Confusão" .
+:astucia  rdf:type owl:NamedIndividual , :Caracteristica ; :nome "Astúcia" .
+:adulacao rdf:type owl:NamedIndividual , :Caracteristica ; :nome "Adulação" .

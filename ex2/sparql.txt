@@ -1,0 +1,141 @@
+###############################################################
+# RPCW 2026 - Exercicio 2 - Queries simples (sparql.txt)
+# Repositorio GraphDB: "boardgames"  (importar boardgames_ind.ttl)
+###############################################################
+
+
+# --------------------------------------------------------------
+# a) Quais sao os jogos criados por um determinado autor?
+#    (arbitrado: "Klaus Teuber")
+# --------------------------------------------------------------
+PREFIX : <http://www.di.uminho.pt/rpcw2026/pg60273#>
+
+SELECT ?jogo WHERE {
+  ?a :nome "Klaus Teuber" ;
+     :criou ?j .
+  ?j :nome ?jogo .
+}
+
+
+# --------------------------------------------------------------
+# b) Quais os premios ganhos por um determinado jogo?
+#    (arbitrado: "Catan")
+# --------------------------------------------------------------
+PREFIX : <http://www.di.uminho.pt/rpcw2026/pg60273#>
+
+SELECT ?premio WHERE {
+  ?p :atribuidoA ?j .
+  ?j :nome "Catan" .
+  ?p :nome ?premio ;
+}
+
+
+
+# --------------------------------------------------------------
+# c) Que jogos pertencem a categoria Family?
+# --------------------------------------------------------------
+PREFIX : <http://www.di.uminho.pt/rpcw2026/pg60273#>
+
+SELECT ?jogo WHERE {
+  ?j :categoria "Family" ;
+     :nome ?jogo .
+}
+ORDER BY ?jogo
+
+
+# --------------------------------------------------------------
+# d) Que jogos demoram mais de 60 minutos a jogar?
+# --------------------------------------------------------------
+PREFIX : <http://www.di.uminho.pt/rpcw2026/pg60273#>
+
+SELECT ?jogo ?tempo WHERE {
+  ?j :tempoJogo ?tempo ;
+     :nome ?jogo .
+  FILTER(?tempo > 60)
+}
+ORDER BY DESC(?tempo)
+
+
+# --------------------------------------------------------------
+# e) Em que jogos entra a mecanica Dice Rolling?
+# --------------------------------------------------------------
+PREFIX : <http://www.di.uminho.pt/rpcw2026/pg60273#>
+
+SELECT ?jogo WHERE {
+  ?m :nome "Dice Rolling" ;
+     :usadaEm ?j .
+  ?j :nome ?jogo .
+}
+ORDER BY ?jogo
+
+
+###############################################################
+# Calculo de distribuicoes (4 val.)
+###############################################################
+
+
+# --------------------------------------------------------------
+# 1) Distribuicao de jogos por editora (ordenada desc por quantidade)
+# --------------------------------------------------------------
+PREFIX : <http://www.di.uminho.pt/rpcw2026/pg60273#>
+
+SELECT ?editora (COUNT(?j) AS ?numJogos) WHERE {
+  ?e a :Editora ;
+     :nome ?editora ;
+     :publicou ?j .
+}
+GROUP BY ?editora
+ORDER BY DESC(?numJogos) ?editora
+
+
+# --------------------------------------------------------------
+# 2) Distribuicao de jogos por categoria
+# --------------------------------------------------------------
+PREFIX : <http://www.di.uminho.pt/rpcw2026/pg60273#>
+
+SELECT ?categoria (COUNT(?j) AS ?numJogos) WHERE {
+  ?j a :Jogo ;
+     :categoria ?categoria .
+}
+GROUP BY ?categoria
+ORDER BY DESC(?numJogos)
+
+
+# --------------------------------------------------------------
+# 3) Jogos com mecanicas mais complexas (mais de 3 mecanicas):
+#    id, nome e lista de mecanicas
+# --------------------------------------------------------------
+PREFIX : <http://www.di.uminho.pt/rpcw2026/pg60273#>
+
+SELECT ?id ?nome (GROUP_CONCAT(DISTINCT ?nomeMec; SEPARATOR=", ") AS ?mecanicas)
+WHERE {
+  ?j a :Jogo ;
+     :id ?id ;
+     :nome ?nome .
+  ?m :usadaEm ?j ;
+     :nome ?nomeMec .
+}
+GROUP BY ?id ?nome
+HAVING (COUNT(DISTINCT ?m) > 3)
+ORDER BY ?nome
+
+
+# --------------------------------------------------------------
+# 4) Ludoteca escolar: so jogos da categoria Family,
+#    lista (sem repeticoes) do nome do jogo, dos seus criadores
+#    e das suas mecanicas
+# --------------------------------------------------------------
+PREFIX : <http://www.di.uminho.pt/rpcw2026/pg60273#>
+
+SELECT ?jogo
+       (GROUP_CONCAT(DISTINCT ?autor; SEPARATOR=", ") AS ?criadores)
+       (GROUP_CONCAT(DISTINCT ?mecanica; SEPARATOR=", ") AS ?mecanicas)
+WHERE {
+  ?j a :Jogo ;
+     :categoria "Family" ;
+     :nome ?jogo .
+  OPTIONAL { ?a :criou ?j ; :nome ?autor . }
+  OPTIONAL { ?m :usadaEm ?j ; :nome ?mecanica . }
+}
+GROUP BY ?jogo
+ORDER BY ?jogo
